@@ -14,7 +14,7 @@ jobs:
           node-version: 18
       
       - run: npm ci
-      - run: npm run build -- --configuration production --base-href "/TheAngularStore/"
+      - run: npm run build -- --configuration production
       
       - name: Create 404.html
         run: |
