@@ -12,9 +12,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      
       - run: npm ci
-      - run: npm run build -- --configuration production --base-href "https://github.com/MarkFudo/TheAngularStore/"
+      - run: npm run build -- --configuration production --base-href "/TheAngularStore/"
+      
+      - name: Create 404.html
+        run: |
+          cp dist/TheAngularStore/index.html dist/TheAngularStore/404.html
+      
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/angular-ecommerce
+          publish_dir: ./dist/TheAngularStore
+          enable_jekyll: false
