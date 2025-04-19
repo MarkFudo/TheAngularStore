@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-ecommerce": {
+    "TheAngularStore": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,11 +39,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-ecommerce",
+            "outputPath": "dist/TheAngularStore",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -62,6 +62,8 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/TheAngularStore/",
+              "deployUrl": "/TheAngularStore/",
               "budgets": [
                 {
                   "type": "initial",
@@ -88,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-ecommerce:build:production"
+              "buildTarget": "TheAngularStore:build:production"
             },
             "development": {
-              "buildTarget": "angular-ecommerce:build:development"
+              "buildTarget": "TheAngularStore:build:development"
             }
           },
           "defaultConfiguration": "development"
