@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - run: npm run build -- --configuration production --base-href "https://[TU-USUARIO].github.io/[NOMBRE-REPO]/"
+      - run: npm run build -- --configuration production --base-href "https://github.com/MarkFudo/TheAngularStore/"
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/[NOMBRE-PROYECTO]
+          publish_dir: ./dist/angular-ecommerce
